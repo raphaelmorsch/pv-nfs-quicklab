@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: $(basename $i)
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+    - ReadWriteOnce
+  nfs:
+    path: $i
+    server: $ip
+
